@@ -5,9 +5,15 @@ using UnityEngine;
 
 public class ObjectHit : MonoBehaviour
 {
-    // Built-in function
+    bool Hit = false;
     private void OnCollisionEnter(Collision other)
     {
-        GetComponent<MeshRenderer>().material.color = Color.red;
+        if(Hit) return;
+        if(other.gameObject.tag == "Player")
+        {
+            GetComponent<MeshRenderer>().material.color = Color.red;
+            gameObject.tag = "Hit";
+            Hit = true;
+        }
     }
 }

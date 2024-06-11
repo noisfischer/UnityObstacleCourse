@@ -4,20 +4,24 @@ using UnityEngine;
 
 public class Dropper : MonoBehaviour
 {
+    MeshRenderer mesh;
+    Rigidbody physics;
     [SerializeField] float TimeToWait = 3.0f;
 
 void Start()
 {
-    GetComponent<MeshRenderer>().enabled = false;
-    GetComponent<Rigidbody>().useGravity = false;
+    mesh = GetComponent<MeshRenderer>();
+    mesh.enabled = false;
+    physics = GetComponent<Rigidbody>();
+    physics.useGravity = false;
 }
 
     void Update()
     {
         if(Time.time > TimeToWait)
         {
-            GetComponent<MeshRenderer>().enabled = true;
-            GetComponent<Rigidbody>().useGravity = true;
+            mesh.enabled = true;
+            physics.useGravity = true;
         }
     }
 }
