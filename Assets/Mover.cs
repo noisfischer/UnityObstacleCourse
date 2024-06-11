@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-
-    float xValue = 0.00f;
-    float yValue = 0.01f;
-    float zValue = 0.00f;
+    // SerializeField lets you edit the value in Unity
+    [SerializeField] float yValue = 0.00f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +16,8 @@ public class Mover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float xValue = Input.GetAxis("Horizontal");
+        float zValue = Input.GetAxis("Vertical");
         transform.Translate(xValue, yValue, zValue);
     }
 }
