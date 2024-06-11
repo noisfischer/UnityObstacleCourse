@@ -5,7 +5,7 @@ using UnityEngine;
 public class Mover : MonoBehaviour
 {
     // SerializeField lets you edit variable values in Unity inspector panel
-    [SerializeField] float moveSpeed = 1.0f;
+    [SerializeField] float moveSpeed = 5.0f;
 
     // Start is called before the first frame update
     void Start()
